@@ -1,0 +1,8 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findCity`(IN city_name VARCHAR(35))
+BEGIN
+SELECT * FROM CITY
+WHERE NAME Like CONCAT(@city_name , '%');
+
+END$$
+DELIMITER;
